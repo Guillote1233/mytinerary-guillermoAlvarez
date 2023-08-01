@@ -1,0 +1,33 @@
+.indexBg{
+    background-image: url('/public/bg-index.jpg');
+    height: 80vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y:-10vh;
+}
+
+.landingInfo{
+    display: block;
+    padding-top: 30vh;
+    padding-left: 1.75rem;
+    margin-left: 6rem ;
+}
+
+.landingSubtitle{
+    margin-top: 2rem;
+    width: 30vw;
+    text-align: justify;
+}
+
+@media (max-width:1024px) {
+    .indexBg{
+        height: 100vh;
+    }
+    .landingInfo{
+        margin-left: 5rem;
+        padding-top: 20vh;
+    }
+    .landingSubtitle{
+        width: 40vh;
+    }
+}
