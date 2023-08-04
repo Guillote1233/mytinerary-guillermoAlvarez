@@ -1,9 +1,10 @@
 import React from "react";
 import "./landing.css";
+import Slider from "./slider";
 
 function Landing() {
   return (
-    <div className="indexBg w-full h-screen">
+    <div className="indexBg w-full h-screen flex justify-around">
       <div className="landingInfo">
         <h1 className="text-3xl lg:text-5xl font-bold text-white">
           Find the perfect destination
@@ -17,6 +18,7 @@ function Landing() {
         </div>
         <button className="btn bg-indigo-600 font-semibold text-white hover:bg-indigo-400 py-3 px-8 rounded">View More</button>
       </div>
+      <Slider className="slider"/>
     </div>
   );
 }

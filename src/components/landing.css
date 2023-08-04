@@ -9,8 +9,6 @@
 .landingInfo{
     display: block;
     padding-top: 30vh;
-    padding-left: 1.75rem;
-    margin-left: 6rem ;
 }
 
 .landingSubtitle{
@@ -21,13 +19,7 @@
 
 @media (max-width:1024px) {
     .indexBg{
-        height: 100vh;
-    }
-    .landingInfo{
-        margin-left: 5rem;
-        padding-top: 20vh;
-    }
-    .landingSubtitle{
-        width: 40vh;
+        display: block;
+        text-align: center;
     }
 }
