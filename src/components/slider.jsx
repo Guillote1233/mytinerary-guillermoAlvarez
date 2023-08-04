@@ -70,9 +70,12 @@ function Slider() {
     groups.push(dataCities.splice(0, 4));
   }
 
+  const size = window.innerWidth;
+
   return (
-    <div className="flex items-center ">
-      <Carousel showArrows={true} showThumbs={false} showStatus={false} autoPlay infiniteLoop width={"30vw"}>
+    <div className="flex flex-col md:pl-24 md:pr-0">
+      <h3 className=" font-semibold text-2xl text-white md:pl-32 max-md:mt-11 max-md:pl-10">Popular Mytineraries!</h3>
+      <Carousel showArrows={true} showThumbs={false} showStatus={false} autoPlay infiniteLoop width={size <= 768 ? "100%" : "70%"}>
         {groups.map((cityGroup, groupIndex) => (
           <div key={groupIndex} className="grid grid-cols-2 gap-4 p-10">
             {cityGroup.map((city, index) => (

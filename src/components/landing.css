@@ -1,9 +1,9 @@
 .indexBg{
     background-image: url('/public/bg-index.jpg');
-    height: 80vh;
+    height: 80%;
     background-repeat: no-repeat;
     background-size: cover;
-    background-position-y:-10vh;
+    background-position-y:-5vh;
 }
 
 .landingInfo{
@@ -13,13 +13,4 @@
 
 .landingSubtitle{
     margin-top: 2rem;
-    width: 30vw;
-    text-align: justify;
-}
-
-@media (max-width:1024px) {
-    .indexBg{
-        display: block;
-        text-align: center;
-    }
 }
