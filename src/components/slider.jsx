@@ -73,8 +73,8 @@ function Slider() {
   const size = window.innerWidth;
 
   return (
-    <div className="flex flex-col md:pl-24 md:pr-0">
-      <h3 className=" font-semibold text-2xl text-white md:pl-32 max-md:mt-11 max-md:pl-10">Popular Mytineraries!</h3>
+    <div className="flex flex-col max-md:pl-24">
+      <h3 className=" font-semibold text-2xl text-white md:pl-48 max-md:mt-11 max-md:pl-10">Popular Mytineraries!</h3>
       <Carousel showArrows={true} showThumbs={false} showStatus={false} autoPlay infiniteLoop width={size <= 768 ? "100%" : "70%"}>
         {groups.map((cityGroup, groupIndex) => (
           <div key={groupIndex} className="grid grid-cols-2 gap-4 p-10">

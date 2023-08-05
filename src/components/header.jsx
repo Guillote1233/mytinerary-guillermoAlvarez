@@ -20,7 +20,7 @@ function Header(){
                 </div>
 
                 <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${isOpen ? 'top-16 bg-white text-black text-right pr-[30px]' : 'top-[-490px]'}`}>
-                    <li className="font-semibold my-7 md:my-0 md:mr-8">
+                    <li className="font-semibold my-7 md:my-0 max-md:mr-8">
                         <a href="/" className="hover:text-indigo-400 duration-500">Home</a>
                     </li>
 
