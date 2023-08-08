@@ -73,7 +73,7 @@ function Slider() {
   return (
     <div className="flex flex-col max-md:pl-4">
       <h3 className=" font-semibold text-2xl text-white xl:pl-48 lg:pl-16 max-md:mt-11">Popular Mytineraries!</h3>
-      <Carousel showArrows={true} showThumbs={false} showStatus={false} autoPlay infiniteLoop width={'80%'}>
+      <Carousel showArrows={true} showThumbs={false} showStatus={false} autoPlay infiniteLoop width={'80%'} className="max-lg:pl-24">
         {groups.map((cityGroup, groupIndex) => (
           <div key={groupIndex} className="grid grid-cols-2 gap-4 p-10">
             {cityGroup.map((city, index) => (
@@ -83,7 +83,7 @@ function Slider() {
                   alt={`${city.name}, ${city.country}`}
                   className="w-40 h-40 rounded"
                 />
-                <p className="text-center mt-0 bg-black text-white rounded">
+                <p className="text-center mt-0 bg-black text-white rounded lg:text-sm">
                   {city.name} - {city.country}
                 </p>
               </div>
