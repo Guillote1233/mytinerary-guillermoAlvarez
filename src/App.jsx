@@ -1,19 +1,23 @@
-import { useState } from 'react'
+import React, { Children } from 'react'
 import './App.css'
-import Header from './components/header';
-import Landing from './components/landing'
-import Footer from './components/footer';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import MainLayout from './layout/MainLayout';
+import Landing from './components/landing';
+import Cities from './components/cities';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <MainLayout/>,
+      children: [
+        {path:'/', element: <Landing/>},
+        {path: '/cities', element: <Cities/>}
+      ]
+    }
+  ])
 
   return (
-    <div className="App">
-      <Header/>
-      <Landing/>
-      <Footer/>
-    </div>
+      <RouterProvider router={router}/>
   )
 }
-
-export default App

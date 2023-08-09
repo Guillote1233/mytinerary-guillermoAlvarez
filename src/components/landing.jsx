@@ -3,7 +3,7 @@ import Slider from "./slider";
 
 function Landing() {
   return (
-    <div className="bg-[url('/public/bg-index.jpg')] bg-no-repeat bg-cover bg-[center_top_-5vh] w-full h-[90%] flex justify-around xl:gap-80 lg:gap-24 max-lg:block lg:h-max max-lg:w-full">
+    <div className="bg-[url('/bg-index.jpg')] bg-no-repeat bg-cover bg-[center_top_-5vh] w-full lg:h-[90.7vh] flex justify-around xl:gap-48 lg:gap-24 max-lg:block max-lg:w-full">
       <div className="block pt-60 pl-40 max-lg:pl-36 max-md:pl-24 max-sm:pl-10">
         <h1 className="text-3xl lg:text-5xl font-bold text-white">
           Find the perfect destination
@@ -15,7 +15,7 @@ function Landing() {
         </div>
         <button className="btn bg-indigo-600 font-semibold text-white hover:bg-indigo-400 py-3 px-8 rounded">View More</button>
       </div>
-      <div className="md:mt-48 max-lg:text-center">
+      <div className="md:mt-32 max-lg:text-center w-full ">
         <Slider/>
       </div>
     </div>
