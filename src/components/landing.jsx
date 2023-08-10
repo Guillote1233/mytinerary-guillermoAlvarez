@@ -3,8 +3,8 @@ import Slider from "./slider";
 
 function Landing() {
   return (
-    <div className="bg-[url('/bg-index.jpg')] bg-no-repeat bg-cover bg-[center_top_-5vh] w-full lg:h-[90.7vh] flex justify-around xl:gap-48 lg:gap-24 max-lg:block max-lg:w-full">
-      <div className="block pt-60 pl-40 max-lg:pl-36 max-md:pl-24 max-sm:pl-10">
+    <div className="w-full lg:h-[90.7vh] flex justify-around xl:gap-48 lg:gap-24 max-lg:block max-lg:w-full">
+      <div className="block pt-60 pl-40 max-lg:pl-36 max-md:pl-24 max-sm:pl-18">
         <h1 className="text-3xl lg:text-5xl font-bold text-white">
           Find the perfect destination
         </h1>
