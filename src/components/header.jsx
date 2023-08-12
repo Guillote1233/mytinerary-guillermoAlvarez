@@ -5,7 +5,7 @@ function Header(){
     let [isOpen, setisOpen] = useState(false);
 
     return(
-        <div className='w-full fixed top-0 left-0 max-lg:backdrop-blur'>
+        <div className='w-full fixed z-10 top-0 left-0 max-lg:backdrop-blur'>
             <div className='md:px-3 py-4 px-5 flex md:justify-around items-center text-white'>
                 <div className="flex text-2xl cursor-pointer items-center gap-2">
                     <GlobeEuropeAfricaIcon className="w-8 h-8 text-white"/>

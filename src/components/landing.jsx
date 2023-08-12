@@ -13,7 +13,7 @@ function Landing() {
             Find your perfect trip, designed by insiders who know and love their cities!
           </p>
         </div>
-        <button className="btn bg-indigo-600 font-semibold text-white hover:bg-indigo-400 py-3 px-8 rounded">View More</button>
+        <a href="/cities" className="btn bg-indigo-600 font-semibold text-white hover:bg-indigo-400 py-3 px-8 rounded">View More</a>
       </div>
       <div className="md:mt-32 max-lg:text-center w-full ">
         <Slider/>
