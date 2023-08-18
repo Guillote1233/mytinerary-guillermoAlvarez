@@ -71,7 +71,7 @@ function Slider() {
   }
 
   return (
-    <div className="flex flex-col max-md:pl-1 lg:w-[30vw] max-md:w-[60vw]">
+    <div className="flex flex-col max-md:pl-1 lg:w-[30vw] max-md:w-[50vw]">
       <h3 className="font-semibold text-2xl text-white xl:pl-48 max-xl:pl-36 lg:pl-24 md:pl-4 max-sm:pl-4 max-md:mt-11">Popular Mytineraries!</h3>
       <Carousel
         showArrows={true}

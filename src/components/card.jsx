@@ -3,7 +3,7 @@ import { EyeIcon } from '@heroicons/react/24/solid'
 import { Link } from 'react-router-dom'
 
 function Card(props){
-    const {id, name, country, url} = props.data
+    const { _id, name, country, url } = props.data
   return (
     <div className='relative w-60 h-60 overflow-hidden rounded-2xl shadow-lg group'>
         <img src={url} alt={name} className='w-full h-full object-cover transition-transform group-hover:scale-110 duration-200' />
@@ -13,7 +13,7 @@ function Card(props){
                 <h3>{country}</h3>
             </div>
             <div className='pr-5 pb-4'>
-                <Link to={'/cities/' + id}>
+                <Link to={'/cities/' + _id}>
                     <button className='btn w-10 h-10 p-1 text-white rounded-md border'>
                      <EyeIcon/>
                     </button>

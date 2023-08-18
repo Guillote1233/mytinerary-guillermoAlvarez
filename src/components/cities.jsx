@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Card from "./card";
-import dataCities from "../assets/datacities";
+import axios from "axios";
+
 
 function Cities() {
   const [searchTerm, setsearchTerm] = useState("");
@@ -10,8 +11,16 @@ function Cities() {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
-  const filteredCities = dataCities
-    .filter((city) =>
+  const [cities, setCities] = useState([]);
+
+  useEffect(()=>{
+    axios('http://localhost:4000/api/cities')
+      .then( res => setCities(res.data.cities))
+      .catch(err =>{ console.error("Error fetching cities")})
+  },[])
+
+
+  const filteredCities = cities.filter((city) =>
       city.name.toLowerCase().startsWith(searchTerm.toLowerCase())
     )
     .slice(startIndex, endIndex);
@@ -47,7 +56,7 @@ function Cities() {
             </p>
           </div>
         ) : (
-          filteredCities.map((city) => <Card key={city.id} data={city} />)
+          filteredCities.map((city) => <Card key={city._id} data={city} />)
         )}
       </div>
       <div className="flex items-center justify-center pb-4">
