@@ -35,27 +35,29 @@ function Details() {
               <ArrowLeftIcon className="w-4 h-4" />
             </button>
           </div>
-          <div className="w-full md:w-1/2 h-[300px] md:h-[400px] object-cover mt-2">
-            <img
-              src={cities.url}
-              alt={cities.name}
-              className="rounded-lg border-2 w-80 h-72"
-            />
-          </div>
-          <div className="flex-col max-w-md">
-            <div className="flex justify-between">
-              <div className="flex-col pb-2">
-                <h2 className="text-white font-bold text-3xl md:text-4xl">
-                  {cities.name}
-                </h2>
-                <h3 className="text-white font-semibold text-xl md:text-2xl">
-                  {cities.country}
-                </h3>
-              </div>
-              <Flag country={cities.flag} size={70} />
+          <div className="flex flex-col items-center md:flex-row md:gap-4">
+            <div className="w-full md:w-1/2 h-[300px] md:h-[400px] mt-2">
+              <img
+                src={cities.url}
+                alt={cities.name}
+                className="rounded-lg border-2 object-cover md:w-80 md:h-72 w-full h-64"
+              />
             </div>
-            <div className="text-white text-justify bg-blue-300 rounded-md shadow-md p-2 w-80">
-              <p>{cities.history}</p>
+            <div className="flex flex-col max-w-md">
+              <div className="flex justify-between">
+                <div className="flex flex-col pb-2">
+                  <h2 className="text-white font-bold text-3xl md:text-4xl">
+                    {cities.name}
+                  </h2>
+                  <h3 className="text-white font-semibold text-xl md:text-2xl">
+                    {cities.country}
+                  </h3>
+                </div>
+                <Flag country={cities.flag} size={70} />
+              </div>
+              <div className="text-white text-justify bg-blue-300 rounded-md shadow-md p-2 w-80">
+                <p>{cities.history}</p>
+              </div>
             </div>
           </div>
         </div>
