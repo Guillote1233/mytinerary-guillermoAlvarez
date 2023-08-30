@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Itineraries from "./itineraries";
 import { useNavigate, useParams } from "react-router-dom";
 import { ArrowLeftIcon } from "@heroicons/react/24/solid";
 import Flag from "react-flagkit";
@@ -24,7 +25,7 @@ function Details() {
   }
 
   return (
-    <div className="flex flex-col items-center bg-[url('/bgdetails.jpg')] bg-no-repeat bg-cover min-h-[90.7vh] justify-around">
+    <div className="flex flex-col items-center bg-[url('/bgdetails.jpg')] bg-no-repeat bg-cover justify-around py-5">
       <div className="bg-blue-400 border-[2px] rounded-md min-w-[80vw] md:min-w-[40vw]">
         <div className="flex flex-col md:flex-row p-4">
           <div className="mt-2 pr-5 max-md:pb-3">
@@ -37,11 +38,21 @@ function Details() {
           </div>
           <div className="flex flex-col items-center md:flex-row md:gap-4">
             <div className="w-full md:w-1/2 h-[300px] md:h-[400px] mt-2">
-              <img
-                src={cities.url}
-                alt={cities.name}
-                className="rounded-lg border-2 object-cover md:w-80 md:h-72 w-full h-64"
-              />
+              <div>
+                <img
+                  src={cities.url}
+                  alt={cities.name}
+                  className="rounded-lg border-2 object-cover md:w-80 md:h-72 w-full h-64"
+                />
+              </div>
+              <div className="flex justify-between items-center w-72 text-white pt-3">
+                <img src="/cloudy-day-1.svg" alt="weather" className="w-12 h-12" />
+                <p className="text-sm text-justify">{cities.weather}</p>
+              </div>
+              <div className="flex items-center gap-2 text-white pl-2 pt-2">
+                <img src="/population.png" alt="weather" className="w-8 h-8" />
+                <p className="text-sm text-justify">{cities.population}</p>
+              </div>
             </div>
             <div className="flex flex-col max-w-md">
               <div className="flex justify-between">
@@ -62,7 +73,7 @@ function Details() {
           </div>
         </div>
         <div className="flex justify-center p-4">
-          <img src="/underconstruction.png" alt="coming soon" />
+          <Itineraries />
         </div>
       </div>
     </div>

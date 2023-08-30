@@ -30,8 +30,8 @@ function Cities() {
   };
 
   return (
-    <div className="flex flex-col items-center bg-[url(/bgcities.jpeg)] bg-no-repeat bg-cover min-h-[90.7vh] justify-around">
-      <div className="font-semibold md:text-4xl text-2xl pt-20 pb-6">
+    <div className="flex flex-col items-center bg-[url(/bgcities.jpeg)] bg-no-repeat bg-cover justify-around">
+      <div className="font-semibold md:text-4xl text-2xl p-5">
         <h1 className="text-white">Find the best cities to travel!</h1>
       </div>
       <div className="p-4 w-full h-20 flex items-center justify-center">
