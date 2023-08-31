@@ -25,7 +25,7 @@ function Details() {
   }
 
   return (
-    <div className="flex flex-col items-center bg-[url('/bgdetails.jpg')] bg-no-repeat bg-cover justify-around py-5">
+    <div className="flex flex-col items-center bg-[url('/bgdetails.jpg')] bg-no-repeat bg-cover justify-around py-5 min-h-[82.5vh]">
       <div className="bg-blue-400 border-[2px] rounded-md min-w-[80vw] md:min-w-[40vw]">
         <div className="flex flex-col md:flex-row p-4">
           <div className="mt-2 pr-5 max-md:pb-3">
@@ -36,8 +36,8 @@ function Details() {
               <ArrowLeftIcon className="w-4 h-4" />
             </button>
           </div>
-          <div className="flex flex-col items-center md:flex-row md:gap-4">
-            <div className="w-full md:w-1/2 h-[300px] md:h-[400px] mt-2">
+          <div className="flex flex-col md:flex-row md:gap-4">
+            <div className="w-full md:w-1/2 min-h-[300px] md:h-[400px] mt-2">
               <div>
                 <img
                   src={cities.url}

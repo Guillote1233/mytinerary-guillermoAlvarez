@@ -6,7 +6,6 @@ const getItineraries = createAsyncThunk('getItineraries', async ({id})=>{
       const res = await axios.get('http://localhost:4000/api/city-itineraries/byCity/' + id)
       return res.data
     } catch(error) {
-
       return []
     }
 })

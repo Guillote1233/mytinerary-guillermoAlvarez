@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "./card";
-import axios from "axios";
-
+import { useDispatch, useSelector } from "react-redux";
+import { getCities } from "../redux/actions/citiesActions.js";
 
 function Cities() {
   const [searchTerm, setsearchTerm] = useState("");
@@ -11,14 +11,14 @@ function Cities() {
   const startIndex = (currentPage - 1) * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
 
-  const [cities, setCities] = useState([]);
-
+  const dispatch = useDispatch();
+  const cities = useSelector(
+    (store) => store.citiesReducer.cities
+  );
+    console.log(cities)
   useEffect(()=>{
-    axios('http://localhost:4000/api/cities')
-      .then( res => setCities(res.data.cities))
-      .catch(err =>{ console.error("Error fetching cities")})
+    dispatch(getCities())
   },[])
-
 
   const filteredCities = cities.filter((city) =>
       city.name.toLowerCase().startsWith(searchTerm.toLowerCase())
@@ -30,9 +30,9 @@ function Cities() {
   };
 
   return (
-    <div className="flex flex-col items-center bg-[url(/bgcities.jpeg)] bg-no-repeat bg-cover justify-around">
+    <div className="flex flex-col items-center bg-[url(/bgcities.jpeg)] bg-no-repeat bg-cover justify-around min-h-[82.5vh]">
       <div className="font-semibold md:text-4xl text-2xl p-5">
-        <h1 className="text-white">Find the best cities to travel!</h1>
+        <h1 className="text-black">Find the best cities to travel!</h1>
       </div>
       <div className="p-4 w-full h-20 flex items-center justify-center">
         <input

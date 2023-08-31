@@ -3,7 +3,7 @@ import Slider from "./slider";
 
 function Landing() {
   return (
-    <div className="w-full lg:h-screen flex justify-around xl:gap-48 lg:gap-24 max-lg:block max-lg:w-full">
+    <div className="w-full min-h-[82.5vh] flex justify-around xl:gap-48 lg:gap-24 max-lg:block max-lg:w-full">
       <div className="block pt-60 pl-40 max-lg:pl-36 max-md:pl-24 max-sm:pl-18">
         <h1 className="text-3xl lg:text-5xl font-bold text-white">
           Find the perfect destination
