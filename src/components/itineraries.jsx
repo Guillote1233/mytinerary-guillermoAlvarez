@@ -30,14 +30,14 @@ export default function Itineraries() {
         Itineraries!
       </h2>
       {itineraries.length === 0 ? (
-        <div className=" flex w-full text-center">
+        <div className=" flex justify-center items-center w-full text-center">
           <img
               src="/nosearchresults.png"
               alt="No search results"
-              className="w-32 h-32 p-5"
+              className="w-24 h-24 p-5"
             />
           <p className="text-white p-4 font-semibold text-2xl">
-            No itineraries yet!
+            No itineraries yet for this city!
           </p>
         </div>
       ) : (

@@ -15,15 +15,12 @@ function Cities() {
   const cities = useSelector(
     (store) => store.citiesReducer.cities
   );
-    console.log(cities)
-  useEffect(()=>{
-    dispatch(getCities())
-  },[])
 
-  const filteredCities = cities.filter((city) =>
-      city.name.toLowerCase().startsWith(searchTerm.toLowerCase())
-    )
-    .slice(startIndex, endIndex);
+  useEffect(()=>{
+    dispatch(getCities(searchTerm))
+  },[searchTerm])
+
+  const filteredCities = cities.slice(startIndex, endIndex);
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
