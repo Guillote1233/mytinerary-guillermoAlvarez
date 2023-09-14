@@ -14,7 +14,8 @@ export default function App() {
       children: [
         {path:'/', element: <Landing/>},
         {path: '/cities', element: <Cities/>},
-        {path:'/cities/:id', element: <Details/>}
+        {path:'/cities/:id', element: <Details/>},
+        {path:'/login', element:<Login/>}
       ]
     }
   ])
