@@ -1,6 +1,7 @@
 import { createAsyncThunk, createAction } from "@reduxjs/toolkit";
 import axios from "axios";
 import localSto from "../../../utils/localStorage.js";
+import { toast } from "react-toastify";
 
 export const userSignUpAction = createAsyncThunk("userSignUpAction", async (userData) => {
     try {
@@ -10,6 +11,7 @@ export const userSignUpAction = createAsyncThunk("userSignUpAction", async (user
 
     } catch (error) {
       console.log(error)
+      toast.error(error.response.data.error)
       throw new Error (error)
     }
   }
@@ -22,6 +24,7 @@ export const userSignInAction = createAsyncThunk("userSignInAction", async (user
 
   } catch (error) {
     console.log(error)
+    toast.error(error.response.data.error)
     throw new Error (error)
   }
 }

@@ -6,6 +6,7 @@ import {
   userLogout
 } from "../actions/userActions";
 import localSto from "../../../utils/localStorage.js";
+import { toast } from "react-toastify";
 
 const initialState = {
   user: {},
@@ -17,6 +18,7 @@ export const userReducer = createReducer(initialState, (builder) => {
   builder
     .addCase(userSignUpAction.fulfilled, (state, action) => {
       localSto.set("token", action.payload.token);
+      toast.success("Welcome to myTinerary " + action.payload.userData.name)
       return {
         ...state,
         user: action.payload.userData,
@@ -26,6 +28,7 @@ export const userReducer = createReducer(initialState, (builder) => {
     })
     .addCase(userSignInAction.fulfilled, (state, action) => {
       localSto.set("token", action.payload.token);
+      toast.success("Welcome to myTinerary " + action.payload.userData.name)
       return {
         ...state,
         user: action.payload.userData,
@@ -44,6 +47,7 @@ export const userReducer = createReducer(initialState, (builder) => {
     .addCase(userLogout, (state) => {
       console.log("llego?")
       localSto.remove('token')
+      toast.success("You have been successfully logged out")
       return {
         ...state,
         user: {},
