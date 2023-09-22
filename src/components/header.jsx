@@ -1,8 +1,18 @@
 import React, { useState } from "react";
 import { GlobeEuropeAfricaIcon, UserIcon, Bars3BottomRightIcon, XMarkIcon } from '@heroicons/react/24/solid';
+import { useSelector, useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { userLogout } from "../redux/actions/userActions";
 
 function Header(){
     let [isOpen, setisOpen] = useState(false);
+    const userData = useSelector(state=>state.userReducer.user)
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+    const logout = ()=>{
+        dispatch(userLogout())
+        navigate('/login')
+    }
 
     return(
         <div className='w-full bg-indigo-500 z-10 top-0 left-0 max-lg:backdrop-blur'>
@@ -20,14 +30,17 @@ function Header(){
                     
                 <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-500 ease-in ${isOpen ? 'top-16 bg-white text-black pr-[30px]' : 'top-[-490px]'}`}>
                     <li className="font-semibold my-7 md:my-0 md:ml-8">
-                        <a href="/" className="hover:text-indigo-300 duration-500">Home</a>
+                        <Link to="/" className="hover:text-indigo-300 duration-500">Home</Link>
                     </li>
 
                     <li className="font-semibold my-7 md:my-0 md:ml-8">
-                        <a href="/cities" className="hover:text-indigo-300">Cities</a>
+                        <Link to="/cities" className="hover:text-indigo-300">Cities</Link>
                     </li>
                     <li className="font-semibold my-7 md:my-0 md:ml-8">
-                        <a href="/" className="flex justify-end items-center gap-1 bg-indigo-600 font-semibold text-white hover:bg-indigo-300 py-2 px-3 w-20 rounded"><UserIcon className="w-7 h-7"/>Login</a>
+                        <button onClick={logout} className="flex justify-end items-center gap-1 bg-indigo-600 font-semibold text-white hover:bg-indigo-300 py-2 px-3 rounded">
+                            {userData && Object.keys(userData).length !== 0 ? <img src={userData.profilePicture} alt={userData.name} className="w-7 h-7 rounded-full bg-white" />:<UserIcon className="w-7 h-7"/>}
+                            {userData && Object.keys(userData).length !== 0 ? "Logout":"Login"}
+                        </button>
                     </li>
                 </ul>
             </div>
