@@ -7,10 +7,13 @@ import { userLogout } from "../redux/actions/userActions";
 function Header(){
     let [isOpen, setisOpen] = useState(false);
     const userData = useSelector(state=>state.userReducer.user)
+    const isOnline = useSelector(state=>state.userReducer.isOnline)
     const dispatch = useDispatch()
     const navigate = useNavigate()
     const logout = ()=>{
-        dispatch(userLogout())
+        if(isOnline){
+            dispatch(userLogout())
+        }
         navigate('/login')
     }
 
